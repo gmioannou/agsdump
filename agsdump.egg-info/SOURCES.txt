@@ -1,0 +1,11 @@
+setup.py
+agsdump/__init__.py
+agsdump/agsdump.py
+agsdump/layer.py
+agsdump/mapservice.py
+agsdump.egg-info/PKG-INFO
+agsdump.egg-info/SOURCES.txt
+agsdump.egg-info/dependency_links.txt
+agsdump.egg-info/entry_points.txt
+agsdump.egg-info/requires.txt
+agsdump.egg-info/top_level.txt
