@@ -1,8 +1,8 @@
-## agsdump 
+# agsdump 
 
-Dumps ArcGIS Map Service
+## Dump ArcGIS Mapserver
 - Styles (SLD)
 - Data (GeoJson)
  
-# Python 2.7.17 64 Bit
+## Python 2.7.17 64 Bit
 
