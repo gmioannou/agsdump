@@ -1,0 +1,18 @@
+-e git+git@github.com:gmioannou/agsdump.git@2e8b0b5e69a2751a11a4bb3839b667495850ad33#egg=agsdump
+# Editable install with no version control (arcgis-rest-query==0.14)
+-e c:\workspace\geo-grafica\dev\python-arcgis-rest-query
+awesome-slugify==1.6.5
+certifi==2019.9.11
+chardet==3.0.4
+GDAL==2.2.4
+idna==2.8
+lxml==4.4.1
+nose==1.3.7
+projectname==0.1
+-e git+git@github.com:gmioannou/python-sld.git@043f34b4e7924895561729f40cc8f06571d31958#egg=python_sld
+regex==2019.11.1
+requests==2.22.0
+Unidecode==0.4.21
+urllib3==1.25.6
+
+# Python 2.7.17 64 Bit

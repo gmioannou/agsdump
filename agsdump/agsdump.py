@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+import datetime
 
 from slugify import slugify
 from mapservice import MapService
@@ -17,9 +18,8 @@ def main():
         map_name = sys.argv[1]
         map_url = sys.argv[2]
 
-    # dump data and styles
+    # dump_styles(map_name, map_url)
     dump_data(map_name, map_url)
-    dump_styles(map_name, map_url)
 
 def dump_styles(map_name, map_url):
 
@@ -32,7 +32,7 @@ def dump_styles(map_name, map_url):
     for layer in map_service.layers:
         layer_id = layer.get('id')
         layer_name = slugify(layer.get('name')).replace("-", "_")
-
+        layer_name = layer.get('name')
         print("\n{} {}".format(layer_id, layer_name))
 
         layer = Layer(map_url, layer_id, dump_folder)
@@ -50,15 +50,25 @@ def dump_data(map_name, map_url):
     for layer in map_service.layers:
         layer_id = layer.get('id')
         layer_name = slugify(layer.get('name')).replace("-", "_")
+        layer_name = layer.get('name')
 
         suffix = '.json'
         layer_file = os.path.join(dump_folder, layer_name + suffix)
         
-        layer_data = map_service.get(layer_id)
+        feat_count = map_service.get(layer_id, count_only=True)
+        
+        print("\n{}. {} ({})".format(layer_id, layer_name, feat_count))
+    
+        if feat_count > 0:
+            x = datetime.datetime.now()
+            print '     Start: ', x
+            layer_data = map_service.get(layer_id)
 
-        print("\n{} {}".format(layer_id, layer_name))
-        with open(layer_file, 'w') as f:
-            json.dump(layer_data, f)
+            with open(layer_file, 'w') as f:
+                json.dump(layer_data, f)
+
+            x = datetime.datetime.now()
+            print '    Finish: ', x
 
 def get_dump_folder(map_name, sub_folder):
     # create dump folder if it does not exist
