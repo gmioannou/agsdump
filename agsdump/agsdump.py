@@ -18,7 +18,7 @@ def main():
         map_name = sys.argv[1]
         map_url = sys.argv[2]
 
-    # dump_styles(map_name, map_url)
+    dump_styles(map_name, map_url)
     dump_data(map_name, map_url)
 
 def dump_styles(map_name, map_url):
@@ -57,7 +57,7 @@ def dump_data(map_name, map_url):
         
         feat_count = map_service.get(layer_id, count_only=True)
         
-        print("\n{}. {} ({})".format(layer_id, layer_name, feat_count))
+        print("\n{} {} ({})".format(layer_id, layer_name, feat_count))
     
         if feat_count > 0:
             x = datetime.datetime.now()

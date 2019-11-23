@@ -238,7 +238,7 @@ class Layer(object):
 
         return {'min_scale': min_scale, 'max_scale': max_scale}
 
-    def _convert_esriPMS(self, rule, symbol, img_type='svg'):
+    def _convert_esriPMS(self, rule, symbol, img_type='img'):
         symbolizer = rule.create_symbolizer('Point')
         graphic = symbolizer.create_element("sld", 'Graphic')
         externalGraphic = graphic.create_element("sld", "ExternalGraphic")
