@@ -13,4 +13,4 @@ projectname==0.1
 regex==2019.11.1
 requests==2.22.0
 Unidecode==0.4.21
-urllib3==1.25.6
+urllib3==1.26.5
